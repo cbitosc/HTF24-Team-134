@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Assistant - Upload PDF</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #004080, #001f5c);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .search-container input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-container button {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid #00d084;
+            color: #00d084;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 4rem auto;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .main-content h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .main-content p {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .upload-container {
+            margin-bottom: 2rem;
+        }
+
+        .choose-file {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        .upload-btn {
+            background: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .footer {
+            background: white;
+            padding: 3rem 2rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #666;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Styles for output area */
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #e8f5e9;
+            font-size: 1em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">PDF Assistant</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Upload PDF</a>
+                <a href="#">Ask a Question</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search PDF">
+                <button>Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1>Upload PDF</h1>
+        <p>Upload your PDF document to get started.</p>
+        <div class="upload-container">
+            <form action="/upload" method="post" enctype="multipart/form-data"> 
+                <label class="choose-file">
+                    Choose File
+                    <input type="file" id="pdfFile" name="file" accept=".pdf" style="display: none;">
+                </label>
+                <br>
+                
+                <button type="submit" class="upload-btn">Upload PDF</button>
+            </form>
+        </div>
+        <div id="output" class="output" style="display: none;"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PDF ASSISTANT</h3>
+                <p>Helping you quickly access insights from your PDF documents. Upload, ask questions, and get answers instantly.</p>
+            </div>
+            <div class="footer-section">
+                <h3>QUICK LINKS</h3>
+                <a href="#">Home</a>
+                <a href="#">Upload PDF</a>
+                <a href="#">Ask a Question</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>CONNECT WITH US</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
